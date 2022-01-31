@@ -16,6 +16,14 @@ public class UsersController {
         this.usersRepository = usersRepository;
     }
 
+    @RequestMapping(value = "/active", method = RequestMethod.GET)
+    public List<Users> getAllActive(){
+        return usersRepository.findAllActive();
+    }
+    @RequestMapping(value = "/notactive", method = RequestMethod.GET)
+    public List<Users> getAllNActive(){
+        return usersRepository.findAllNActive();
+    }
     @RequestMapping(value = "/all", method = RequestMethod.GET)
     public List<Users> getAll(){
         return usersRepository.findAll();

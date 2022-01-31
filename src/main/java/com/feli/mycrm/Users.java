@@ -17,16 +17,17 @@ public class Users {
     private Date dateOfBirth;
     private String login;
     private String password;
-    private int isDeleted = 0;
+    private int isDeleted;
 
     public Users(){}
 
-    public Users(String name, String surname, String dateOfBirth, String login, String password){
+    public Users(String name, String surname, String dateOfBirth, String login, String password, int isDeleted){
         this.name = name;
         this.surname = surname;
         this.dateOfBirth = new DateParser().getDate(dateOfBirth);
         this.login = login;
         this.password = password;
+        this.isDeleted = isDeleted;
     }
 
     public long getId() {
